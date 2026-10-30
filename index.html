@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Portfolio | ยื่นเข้าศึกษาต่อจุฬาลงกรณ์มหาวิทยาลัย</title>
+    <title>E-Portfolio | วงศ์วรรธน์ เรืองสุกใส (เฮงเฮง) - จุฬาลงกรณ์มหาวิทยาลัย</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Kanit -->
+    <!-- Google Fonts: Prompt & Kanit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -19,21 +19,27 @@
                 extend: {
                     colors: {
                         chula: {
-                            50: '#fff1f4',
-                            100: '#ffe4ea',
-                            200: '#fecdd8',
-                            300: '#fda4b8',
-                            400: '#fb7191',
-                            500: '#e82c6a', /* Chula Pink Core */
-                            600: '#de5d83',
-                            700: '#be124c',
-                            800: '#9f1245',
-                            900: '#85143e',
-                            dark: '#1a0810'
+                            50: '#fff0f5',
+                            100: '#ffe3ed',
+                            200: '#ffc6dc',
+                            300: '#ff99c0',
+                            400: '#ff5997',
+                            500: '#e4007c', /* Primary Chula Pink */
+                            600: '#d81b60', /* Deep Chula Pink */
+                            700: '#b00649',
+                            800: '#92083e',
+                            900: '#7a0c37',
+                            dark: '#0f050b',
+                            card: '#1a0d16'
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706'
                         }
                     },
                     fontFamily: {
-                        sans: ['Kanit', 'sans-serif'],
+                        sans: ['Prompt', 'Kanit', 'sans-serif'],
                     }
                 }
             }
@@ -41,76 +47,92 @@
     </script>
     <style>
         body {
-            font-family: 'Kanit', sans-serif;
-            background-color: #faf9fb;
+            font-family: 'Prompt', 'Kanit', sans-serif;
+            background-color: #0d060a;
+            color: #f1f5f9;
         }
         .glass {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(26, 13, 22, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(228, 0, 124, 0.2);
         }
-        .glass-dark {
-            background: rgba(26, 8, 16, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(222, 93, 131, 0.2);
+        .glass-gold {
+            background: rgba(35, 20, 10, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(245, 158, 11, 0.3);
         }
         .gradient-text {
-            background: linear-gradient(135deg, #e82c6a 0%, #be124c 100%);
+            background: linear-gradient(135deg, #ff5997 0%, #e4007c 50%, #f59e0b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #e82c6a 0%, #9f1245 100%);
+            background: linear-gradient(135deg, #e4007c 0%, #b00649 100%);
+        }
+        .gradient-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
         }
         .hero-pattern {
-            background-color: #faf9fb;
-            background-image: radial-gradient(#de5d83 0.75px, transparent 0.75px), radial-gradient(#de5d83 0.75px, #faf9fb 0.75px);
-            background-size: 30px 30px;
-            background-position: 0 0,15px 15px;
+            background-color: #0d060a;
+            background-image: radial-gradient(#d81b60 0.8px, transparent 0.8px), radial-gradient(#d81b60 0.8px, #0d060a 0.8px);
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
             opacity: 0.95;
+        }
+        /* Music Visualizer Bar Animation */
+        .v-bar {
+            animation: bounce 1.2s ease-in-out infinite alternate;
+        }
+        @keyframes bounce {
+            0% { height: 15%; }
+            100% { height: 100%; }
         }
         @media print {
             .no-print { display: none !important; }
-            body { background: white !important; }
-            .glass { border: none !important; box-shadow: none !important; }
+            body { background: white !important; color: black !important; }
+            .glass { border: none !important; box-shadow: none !important; background: white !important; color: black !important; }
+            .text-white, .text-slate-200, .text-slate-300 { color: black !important; }
         }
     </style>
 </head>
-<body class="text-slate-800 antialiased selection:bg-chula-500 selection:text-white">
+<body class="selection:bg-chula-500 selection:text-white antialiased">
+
+    <!-- Background Glow Effects -->
+    <div class="fixed top-0 left-1/4 w-96 h-96 bg-chula-600/20 rounded-full blur-[120px] pointer-events-none z-0"></div>
+    <div class="fixed bottom-0 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
 
     <!-- Navigation Header -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 no-print" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-3">
-            <div class="glass rounded-2xl px-5 py-3 shadow-sm flex items-center justify-between border border-white/60">
+            <div class="glass rounded-2xl px-5 py-3 shadow-lg shadow-chula-900/30 flex items-center justify-between">
                 <!-- Logo -->
                 <a href="#hero" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-xl shadow-md shadow-chula-500/30 group-hover:scale-105 transition-transform">
-                        CU
+                        <i class="fa-solid fa-music text-sm"></i>
                     </div>
                     <div>
-                        <span class="font-bold text-lg leading-none block text-slate-800">PORTFOLIO</span>
-                        <span class="text-xs text-chula-600 font-medium">จุฬาลงกรณ์มหาวิทยาลัย</span>
+                        <span class="font-bold text-lg leading-none block text-white tracking-wide">HENG HENG</span>
+                        <span class="text-xs text-chula-400 font-medium">CU Music Portfolio</span>
                     </div>
                 </a>
 
                 <!-- Desktop Nav Links -->
                 <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
-                    <a href="#about" class="text-slate-600 hover:text-chula-600 transition-colors">ประวัติส่วนตัว</a>
-                    <a href="#target" class="text-slate-600 hover:text-chula-600 transition-colors">คณะเป้าหมาย</a>
-                    <a href="#activities" class="text-slate-600 hover:text-chula-600 transition-colors">ผลงาน & กิจกรรม</a>
-                    <a href="#skills" class="text-slate-600 hover:text-chula-600 transition-colors">ทักษะความสามารถ</a>
-                    <a href="#contact" class="text-slate-600 hover:text-chula-600 transition-colors">ติดต่อ</a>
+                    <a href="#about" class="text-slate-300 hover:text-chula-400 transition-colors">เกี่ยวกับผม</a>
+                    <a href="#skills" class="text-slate-300 hover:text-chula-400 transition-colors">ทักษะดนตรี</a>
+                    <a href="#activities" class="text-slate-300 hover:text-chula-400 transition-colors">ผลงานการแสดง</a>
+                    <a href="#target" class="text-slate-300 hover:text-chula-400 transition-colors">เป้าหมายจุฬาฯ</a>
+                    <a href="#contact" class="text-slate-300 hover:text-chula-400 transition-colors">ติดต่อ</a>
                 </nav>
 
                 <!-- Actions -->
                 <div class="flex items-center gap-3">
-                    <button onclick="openEditModal()" class="hidden sm:flex items-center gap-2 text-xs bg-slate-100 hover:bg-chula-50 text-slate-700 hover:text-chula-600 px-3 py-2 rounded-xl transition-all border border-slate-200">
-                        <i class="fa-solid fa-pen-to-square"></i> แก้ไขข้อมูล
+                    <button onclick="window.print()" class="hidden sm:flex items-center gap-2 text-xs bg-white/10 hover:bg-white/20 text-slate-200 px-3 py-2 rounded-xl transition-all border border-white/10">
+                        <i class="fa-solid fa-print"></i> พิมพ์ PDF
                     </button>
-                    <a href="#contact" class="gradient-bg text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-xl shadow-md shadow-chula-500/20 hover:opacity-95 hover:shadow-lg transition-all">
-                        <i class="fa-regular fa-paper-plane mr-1"></i> ติดต่อผู้สมัคร
+                    <a href="#contact" class="gradient-bg text-white text-xs sm:text-sm font-medium px-4 py-2 rounded-xl shadow-md shadow-chula-500/30 hover:opacity-95 hover:scale-105 transition-all">
+                        <i class="fa-regular fa-paper-plane mr-1"></i> ติดต่อผม
                     </a>
                 </div>
             </div>
@@ -118,52 +140,52 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden hero-pattern">
-        <!-- Pink Glow Decoration -->
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-chula-300/30 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid md:grid-cols-12 gap-8 items-center">
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden hero-pattern z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid md:grid-cols-12 gap-10 items-center">
                 
                 <!-- Left Details -->
                 <div class="md:col-span-7 text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-chula-100 border border-chula-200 text-chula-700 text-xs sm:text-sm font-semibold mb-6">
-                        <span class="w-2 h-2 rounded-full bg-chula-500 animate-pulse"></span>
-                        TCAS Portfolio Round | แฟ้มสะสมผลงาน
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-chula-900/60 border border-chula-500/40 text-chula-300 text-xs sm:text-sm font-medium mb-6">
+                        <i class="fa-solid fa-guitar text-chula-400"></i>
+                        TCAS Portfolio Round | สาขาวิชาดุริยางคศิลป์
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-4 leading-tight">
-                        มุ่งมั่นสู่รั้ว <span class="gradient-text">จามจุรี</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+                        วงศ์วรรธน์ <span class="gradient-text">เรืองสุกใส</span>
                     </h1>
-
-                    <p class="text-lg sm:text-xl text-slate-600 font-light mb-8 max-w-2xl">
-                        "ความตั้งใจอันแน่วแน่ในการแสวงหาความรู้ พัฒนาตนเอง และสร้างสรรค์คุณค่าแก่สังคม ภายใต้ร่มเงาแห่งปัญญาของจุฬาลงกรณ์มหาวิทยาลัย"
+                    <p class="text-xl text-gold-400 font-semibold mb-3 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fa-solid fa-sliders text-sm"></i> "เฮงเฮง" | Acoustic & Electric Guitarist & Vocalist
                     </p>
 
-                    <!-- Profile Info Badges -->
+                    <p class="text-slate-300 text-base sm:text-lg font-light mb-8 max-w-2xl leading-relaxed">
+                        "ดนตรีคือลมหายใจและส่วนหนึ่งของชีวิตผม มุ่งมั่นพัฒนาทักษะการเล่นกีตาร์และการร้องเพลงอย่างไม่หยุดยั้ง เพื่อก้าวสู่การเป็นนิสิตดุริยางคศิลป์ จุฬาลงกรณ์มหาวิทยาลัย"
+                    </p>
+
+                    <!-- Quick Facts Grid -->
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-8 text-left max-w-lg mx-auto md:mx-0">
-                        <div class="glass p-3 rounded-xl border border-white/80 shadow-sm">
+                        <div class="glass p-3.5 rounded-2xl">
                             <span class="text-xs text-slate-400 block font-medium">วันเกิด</span>
-                            <span id="display-dob-hero" class="text-sm font-semibold text-slate-800">10 ธันวาคม 2554</span>
+                            <span class="text-sm font-semibold text-white">10 ธันวาคม 2554</span>
                         </div>
-                        <div class="glass p-3 rounded-xl border border-white/80 shadow-sm">
-                            <span class="text-xs text-slate-400 block font-medium">เป้าหมาย</span>
-                            <span id="display-target-hero" class="text-sm font-semibold text-chula-600">จุฬาลงกรณ์มหาวิทยาลัย</span>
+                        <div class="glass p-3.5 rounded-2xl">
+                            <span class="text-xs text-slate-400 block font-medium">อายุ</span>
+                            <span class="text-sm font-semibold text-chula-300">14 ปี</span>
                         </div>
-                        <div class="glass p-3 rounded-xl border border-white/80 shadow-sm col-span-2 sm:col-span-1">
-                            <span class="text-xs text-slate-400 block font-medium">สถานะ</span>
-                            <span class="text-sm font-semibold text-emerald-600 flex items-center gap-1">
-                                <i class="fa-solid fa-circle-check text-xs"></i> พร้อมเรียนรู้
+                        <div class="glass p-3.5 rounded-2xl col-span-2 sm:col-span-1">
+                            <span class="text-xs text-slate-400 block font-medium">เครื่องดนตรีหลัก</span>
+                            <span class="text-sm font-semibold text-gold-400 flex items-center gap-1">
+                                <i class="fa-solid fa-music text-xs"></i> กีตาร์ / ร้องเพลง
                             </span>
                         </div>
                     </div>
 
                     <div class="flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="#about" class="gradient-bg text-white px-6 py-3 rounded-xl font-medium shadow-lg shadow-chula-500/30 hover:scale-105 transition-transform flex items-center gap-2">
-                            สำรวจประวัติ <i class="fa-solid fa-arrow-down text-xs"></i>
+                        <a href="#activities" class="gradient-bg text-white px-6 py-3 rounded-xl font-medium shadow-lg shadow-chula-500/30 hover:scale-105 transition-transform flex items-center gap-2">
+                            <i class="fa-solid fa-play text-xs"></i> ชมผลงานการแสดง
                         </a>
-                        <a href="#target" class="glass bg-white/80 hover:bg-white text-slate-700 px-6 py-3 rounded-xl font-medium shadow-sm border border-slate-200 transition-all flex items-center gap-2">
-                            <i class="fa-solid fa-graduation-cap text-chula-500"></i> คณะเป้าหมาย
+                        <a href="#skills" class="glass text-slate-200 hover:text-white px-6 py-3 rounded-xl font-medium hover:bg-white/10 transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-bars-staggered text-chula-400"></i> ทักษะดนตรี
                         </a>
                     </div>
                 </div>
@@ -171,31 +193,39 @@
                 <!-- Right Profile Card / Photo -->
                 <div class="md:col-span-5 flex justify-center">
                     <div class="relative w-full max-w-sm">
-                        <!-- Card Glow -->
-                        <div class="absolute -inset-1.5 gradient-bg rounded-3xl blur opacity-30"></div>
+                        <!-- Musical Neon Frame Glow -->
+                        <div class="absolute -inset-1.5 gradient-bg rounded-3xl blur-md opacity-50 animate-pulse"></div>
 
-                        <div class="relative glass rounded-3xl p-6 shadow-xl border border-white/80 text-center">
+                        <div class="relative glass rounded-3xl p-6 shadow-2xl text-center border border-chula-500/30">
                             <!-- Image Container -->
-                            <div class="relative w-48 h-48 mx-auto mb-4 rounded-2xl overflow-hidden shadow-inner bg-chula-100 border-4 border-white">
-                                <img id="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600" alt="รูปถ่ายนักเรียน" class="w-full h-full object-cover">
-                                <button onclick="triggerImageUpload()" class="absolute bottom-2 right-2 bg-slate-900/70 hover:bg-slate-900 text-white p-2 rounded-lg text-xs backdrop-blur-sm transition-all no-print">
-                                    <i class="fa-solid fa-camera"></i>
-                                </button>
-                                <input type="file" id="image-input" accept="image/*" class="hidden" onchange="previewImage(event)">
+                            <div class="relative w-52 h-52 mx-auto mb-5 rounded-2xl overflow-hidden shadow-2xl border-2 border-chula-400/40 group">
+                                <img id="profile-img" 
+                                     src="https://lh3.google.com/u/0/d/1rDZxkBnDFtChJ7wh6j_jinXeXZNZjXk-=w1920-h945-iv1?auditContext=forDisplay" 
+                                     onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600'" 
+                                     alt="วงศ์วรรธน์ เรืองสุกใส (เฮงเฮง)" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                
+                                <div class="absolute bottom-2 right-2 bg-slate-900/80 text-chula-400 px-2.5 py-1 rounded-lg text-xs backdrop-blur-md">
+                                    <i class="fa-solid fa-circle text-[8px] text-emerald-400 animate-ping mr-1"></i> Live Session
+                                </div>
                             </div>
 
-                            <h2 id="display-name" class="text-2xl font-bold text-slate-800 mb-1">นายกิตติภาพ มีสุข</h2>
-                            <p id="display-school" class="text-sm text-chula-600 font-semibold mb-4">โรงเรียนเตรียมอุดมศึกษา</p>
+                            <h2 class="text-2xl font-bold text-white mb-1">นายวงศ์วรรธน์ เรืองสุกใส</h2>
+                            <p class="text-sm text-chula-400 font-medium mb-4">ชื่อเล่น: เฮงเฮง (Heng Heng)</p>
 
-                            <div class="pt-4 border-t border-slate-200/60 flex justify-around text-center">
-                                <div>
-                                    <span class="block text-xs text-slate-400">เกรดเฉลี่ย (GPAX)</span>
-                                    <span id="display-gpax" class="text-lg font-bold text-slate-800">3.95</span>
+                            <!-- Audio Visualizer Mockup Banner -->
+                            <div class="bg-black/40 rounded-xl p-3 border border-white/5 flex items-center justify-between gap-3">
+                                <div class="text-left">
+                                    <span class="text-[10px] text-slate-400 block">CURRENT SPEC</span>
+                                    <span class="text-xs font-semibold text-gold-400">Guitarist & Vocalist</span>
                                 </div>
-                                <div class="w-px bg-slate-200"></div>
-                                <div>
-                                    <span class="block text-xs text-slate-400">แผนการเรียน</span>
-                                    <span id="display-program" class="text-lg font-bold text-slate-800">วิทย์-คณิต</span>
+                                <!-- Visualizer bars -->
+                                <div class="flex items-end gap-1 h-6">
+                                    <div class="v-bar w-1 bg-chula-500 rounded-full" style="animation-delay: 0.1s"></div>
+                                    <div class="v-bar w-1 bg-chula-400 rounded-full" style="animation-delay: 0.4s"></div>
+                                    <div class="v-bar w-1 bg-gold-400 rounded-full" style="animation-delay: 0.2s"></div>
+                                    <div class="v-bar w-1 bg-chula-500 rounded-full" style="animation-delay: 0.5s"></div>
+                                    <div class="v-bar w-1 bg-chula-300 rounded-full" style="animation-delay: 0.3s"></div>
                                 </div>
                             </div>
                         </div>
@@ -206,253 +236,299 @@
         </div>
     </section>
 
-    <!-- Section: About Me (ประวัติส่วนตัว) -->
-    <section id="about" class="py-20 relative">
+    <!-- Interactive Music Sample Player -->
+    <section class="py-6 bg-chula-dark/80 border-y border-chula-500/20 relative z-20 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <button id="play-btn" onclick="toggleAudio()" class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center text-white text-lg shadow-lg shadow-chula-500/40 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-play ml-0.5" id="play-icon"></i>
+                    </button>
+                    <div>
+                        <span class="text-xs text-chula-400 font-semibold block uppercase tracking-wider">Demo Sample Performance</span>
+                        <h4 class="text-sm font-bold text-white" id="song-title">Acoustic Guitar & Vocal Cover - HengHeng</h4>
+                    </div>
+                </div>
+
+                <!-- Custom Progress Bar -->
+                <div class="w-full md:w-1/3 bg-white/10 h-2 rounded-full overflow-hidden relative cursor-pointer" onclick="seekAudio(event)">
+                    <div id="audio-progress" class="gradient-bg h-full w-0 transition-all duration-200"></div>
+                </div>
+
+                <div class="flex items-center gap-3 text-xs text-slate-400">
+                    <i class="fa-solid fa-volume-high text-chula-400"></i>
+                    <span>Audio Track Demo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: About Me (เกี่ยวกับผม) -->
+    <section id="about" class="py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-500 mb-2">ABOUT ME</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">ประวัติส่วนตัวและการศึกษา</h3>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-400 mb-2">ABOUT ME</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">ข้อมูลส่วนตัวและความหลงใหล</h3>
                 <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Personal Info Card -->
-                <div class="glass p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-chula-100 text-chula-600 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-user"></i>
+                <div class="glass p-6 rounded-3xl hover:border-chula-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-chula-900/80 text-chula-400 flex items-center justify-center text-xl mb-4 border border-chula-500/30">
+                        <i class="fa-solid fa-user-note"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-4">ข้อมูลทั่วไป</h4>
-                    <ul class="space-y-3 text-sm text-slate-600">
-                        <li class="flex justify-between border-b border-slate-100 pb-2">
+                    <h4 class="text-xl font-bold text-white mb-4">ข้อมูลทั่วไป</h4>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex justify-between border-b border-white/5 pb-2">
                             <span class="text-slate-400">ชื่อ-นามสกุล:</span>
-                            <span id="info-fullname" class="font-medium text-slate-800">นายกิตติภาพ มีสุข</span>
+                            <span class="font-medium text-white">นายวงศ์วรรธน์ เรืองสุกใส</span>
                         </li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2">
-                            <span class="text-slate-400">วัน/เดือน/ปีเกิด:</span>
-                            <span id="info-dob" class="font-medium text-slate-800">10 ธันวาคม 2554</span>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-slate-400">ชื่อเล่น:</span>
+                            <span class="font-medium text-chula-300">เฮงเฮง (Heng Heng)</span>
                         </li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2">
-                            <span class="text-slate-400">สัญชาติ/เชื้อชาติ:</span>
-                            <span class="font-medium text-slate-800">ไทย / ไทย</span>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-slate-400">วันเกิด:</span>
+                            <span class="font-medium text-white">10 ธันวาคม 2554</span>
                         </li>
-                        <li class="flex justify-between border-b border-slate-100 pb-2">
-                            <span class="text-slate-400">ศาสนา:</span>
-                            <span class="font-medium text-slate-800">พุทธ</span>
+                        <li class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-slate-400">อายุ:</span>
+                            <span class="font-medium text-gold-400">14 ปี</span>
                         </li>
                         <li class="flex justify-between">
-                            <span class="text-slate-400">หมู่เลือด:</span>
-                            <span class="font-medium text-slate-800">O</span>
+                            <span class="text-slate-400">สัญชาติ:</span>
+                            <span class="font-medium text-white">ไทย</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Education Card -->
-                <div class="glass p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-chula-100 text-chula-600 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-school"></i>
+                <!-- Passion & Philosophy -->
+                <div class="glass p-6 rounded-3xl hover:border-chula-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-chula-900/80 text-chula-400 flex items-center justify-center text-xl mb-4 border border-chula-500/30">
+                        <i class="fa-solid fa-heart-pulse"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-4">ประวัติการศึกษา</h4>
-                    <div class="space-y-4 text-sm">
-                        <div class="relative pl-4 border-l-2 border-chula-500">
-                            <span class="text-xs text-chula-600 font-semibold">ระดับมัธยมศึกษาตอนปลาย</span>
-                            <p id="info-school-high" class="font-bold text-slate-800">โรงเรียนเตรียมอุดมศึกษา</p>
-                            <p class="text-xs text-slate-500">แผนการเรียน วิทยาศาสตร์-คณิตศาสตร์ (GPAX: 3.95)</p>
-                        </div>
-                        <div class="relative pl-4 border-l-2 border-slate-200">
-                            <span class="text-xs text-slate-400">ระดับมัธยมศึกษาตอนต้น</span>
-                            <p class="font-semibold text-slate-700">โรงเรียนสาธิตจุฬาลงกรณ์มหาวิทยาลัย</p>
-                            <p class="text-xs text-slate-500">ผลการเรียนเฉลี่ยรวม 3.92</p>
-                        </div>
+                    <h4 class="text-xl font-bold text-white mb-4">ความหลงใหลในดนตรี</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light mb-4">
+                        "สำหรับผม ดนตรีไม่ได้เป็นเพียงงานอดิเรก แต่เป็นภาษาใจและส่วนหนึ่งในชีวิต ผมเริ่มต้นเล่นกีตาร์และร้องเพลงด้วยความรัก หลงใหลในเสน่ห์ของเสียงตัวโน้ต และจังหวะดนตรีที่สามารถถ่ายทอดอารมณ์ความรู้สึกได้ไร้ขีดจำกัด"
+                    </p>
+                    <div class="p-3 bg-white/5 rounded-xl border border-white/5 text-xs text-gold-400 italic">
+                        <i class="fa-solid fa-quote-left mr-1"></i> Music expresses that which cannot be said and on which it is impossible to be silent.
                     </div>
                 </div>
 
-                <!-- Statement of Purpose Card -->
-                <div class="glass p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-chula-100 text-chula-600 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-heart"></i>
+                <!-- Goal to Chula -->
+                <div class="glass-gold p-6 rounded-3xl hover:border-gold-500/50 transition-all">
+                    <div class="w-12 h-12 rounded-2xl bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl mb-4 border border-gold-500/30">
+                        <i class="fa-solid fa-graduation-cap"></i>
                     </div>
-                    <h4 class="text-xl font-bold text-slate-800 mb-4">แรงบันดาลใจ (SOP)</h4>
-                    <p id="info-sop" class="text-sm text-slate-600 leading-relaxed font-light">
-                        "ความฝันของผมคือการได้ศึกษาในสถาบันชั้นนำระดับประเทศอย่างจุฬาลงกรณ์มหาวิทยาลัย ที่รวบรวมองค์ความรู้และนวัตกรรมอันเป็นประโยชน์ต่อสังคม ผมมุ่งมั่นที่จะนำความรู้ความสามารถมาต่อยอดเพื่อพัฒนาประเทศและแก้ปัญหาเชิงเทคโนโลยีในอนาคต"
+                    <h4 class="text-xl font-bold text-white mb-4">มุ่งสู่จุฬาลงกรณ์ฯ</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed font-light mb-4">
+                        เป้าหมายสูงสุดคือการได้เข้าศึกษาใน <span class="text-chula-300 font-semibold">สาขาวิชาดุริยางคศิลป์ คณะศิลปกรรมศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span> เพื่อต่อยอดทักษะด้านดนตรีอย่างเป็นระบบ และเติบโตเป็นนักดนตรีอาชีพที่มีคุณภาพ
                     </p>
+                    <span class="inline-block px-3 py-1 rounded-full bg-chula-500/20 text-chula-300 text-xs font-semibold border border-chula-500/30">
+                        #ChulaMusic #TCASPortfolio
+                    </span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Section: Target Faculty & Ambition (คณะเป้าหมาย) -->
-    <section id="target" class="py-20 bg-gradient-to-b from-chula-50/50 to-white relative">
+    <!-- Section: Musical Skills & Talent (ทักษะดนตรี) -->
+    <section id="skills" class="py-20 bg-chula-dark relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-500 mb-2">TARGET FACULTY</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">คณะและสาขาวิชาเป้าหมาย</h3>
-                <p class="text-slate-500 text-sm mt-2">เป้าหมายการศึกษาในระดับอุดมศึกษา ณ จุฬาลงกรณ์มหาวิทยาลัย</p>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-400 mb-2">MUSICAL SKILLS</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">ทักษะและความสามารถทางดนตรี</h3>
                 <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Target Faculty Showcase Box -->
-            <div class="glass-dark rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
-                <!-- Background Graphic -->
-                <div class="absolute -right-10 -bottom-10 opacity-10 text-white text-9xl pointer-events-none">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-
-                <div class="grid md:grid-cols-12 gap-8 items-center relative z-10">
-                    <div class="md:col-span-8">
-                        <span class="inline-block px-3 py-1 bg-chula-500/30 text-chula-300 rounded-full text-xs font-medium mb-4 border border-chula-500/40">
-                            อันดับที่ 1 ในใจ (First Choice)
-                        </span>
-                        <h4 id="display-faculty-title" class="text-2xl sm:text-4xl font-extrabold text-white mb-3">
-                            คณะวิศวกรรมศาสตร์
-                        </h4>
-                        <p id="display-dept-title" class="text-chula-300 text-lg font-medium mb-6">
-                            สาขาวิชาวิศวกรรมคอมพิวเตอร์และเทคโนโลยีดิจิทัล (CEDT)
-                        </p>
-                        
-                        <div class="space-y-4 text-slate-300 text-sm leading-relaxed mb-8">
-                            <p id="display-target-reason">
-                                <i class="fa-solid fa-quote-left text-chula-400 mr-2 opacity-50"></i>
-                                เหตุผลที่เลือก: เนื่องจากมีความสนใจอย่างลึกซึ้งในเทคโนโลยีปัญญาประดิษฐ์ (AI) และการพัฒนาซอฟต์แวร์ คณะวิศวกรรมศาสตร์ จุฬาฯ เป็นสถาบันที่มีหลักสูตรเข้มข้น และสร้างนวัตกรระดับประเทศที่ตรงตามเป้าหมายอาชีพของผม
-                            </p>
-                        </div>
-
-                        <!-- Objectives Pills -->
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1.5 rounded-xl bg-white/10 text-xs text-slate-200 border border-white/10">
-                                <i class="fa-solid fa-code text-chula-400 mr-1.5"></i> Software Engineering
-                            </span>
-                            <span class="px-3 py-1.5 rounded-xl bg-white/10 text-xs text-slate-200 border border-white/10">
-                                <i class="fa-solid fa-brain text-chula-400 mr-1.5"></i> Artificial Intelligence
-                            </span>
-                            <span class="px-3 py-1.5 rounded-xl bg-white/10 text-xs text-slate-200 border border-white/10">
-                                <i class="fa-solid fa-network-wired text-chula-400 mr-1.5"></i> Innovation Leader
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Side Stats / Quick Info -->
-                    <div class="md:col-span-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-center">
-                        <div class="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4 text-2xl shadow-lg">
-                            <i class="fa-solid fa-award text-white"></i>
-                        </div>
-                        <h5 class="text-white font-bold text-lg mb-1">ความพร้อมการสมัคร</h5>
-                        <p class="text-xs text-slate-400 mb-6">ตรงตามเกณฑ์ TCAS69 / TCAS70</p>
-
-                        <div class="space-y-3 text-left text-xs">
-                            <div>
-                                <div class="flex justify-between text-slate-300 mb-1">
-                                    <span>เกรดเฉลี่ยขั้นต่ำ (3.00+)</span>
-                                    <span class="text-emerald-400 font-bold">ผ่าน (3.95)</span>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-full h-1.5">
-                                    <div class="bg-emerald-400 h-1.5 rounded-full" style="width: 100%"></div>
-                                </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Skill 1: Guitar Performance -->
+                <div class="glass p-6 rounded-3xl border border-chula-500/20">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-guitar"></i>
                             </div>
                             <div>
-                                <div class="flex justify-between text-slate-300 mb-1">
-                                    <span>แฟ้มสะสมผลงาน (Portfolio)</span>
-                                    <span class="text-chula-300 font-bold">100% สมบูรณ์</span>
-                                </div>
-                                <div class="w-full bg-white/10 rounded-full h-1.5">
-                                    <div class="gradient-bg h-1.5 rounded-full" style="width: 100%"></div>
-                                </div>
+                                <h4 class="text-lg font-bold text-white">Guitar Performance</h4>
+                                <span class="text-xs text-slate-400">Acoustic & Electric Guitar</span>
                             </div>
                         </div>
+                        <span class="text-sm font-bold text-gold-400">Advanced</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        มีความเชี่ยวชาญในการเล่นกีตาร์โปร่ง (Acoustic Fingerstyle & Strumming) และกีตาร์ไฟฟ้า (Rhythm & Solo technique) สามารถแกะเพลงและเรียบเรียงไลน์กีตาร์ได้ด้วยตนเอง
+                    </p>
+                    <div class="w-full bg-white/10 rounded-full h-2">
+                        <div class="gradient-bg h-2 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
+
+                <!-- Skill 2: Vocal & Singing -->
+                <div class="glass p-6 rounded-3xl border border-chula-500/20">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white">
+                                <i class="fa-solid fa-microphone-lines"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Vocal Performance</h4>
+                                <span class="text-xs text-slate-400">Lead Vocalist & Harmony</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold text-gold-400">High Proficiency</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        ทักษะการขับร้อง การควบคุมลมหายใจ Pitching และการใส่อารมณ์ลงในบทเพลง สามารถร้องเพลงแนว Pop, Pop-Rock และ Acoustic Cover ได้เป็นอย่างดี
+                    </p>
+                    <div class="w-full bg-white/10 rounded-full h-2">
+                        <div class="gradient-bg h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3: Music Theory & Ear Training -->
+                <div class="glass p-6 rounded-3xl border border-chula-500/20">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-chula-400 flex items-center justify-center">
+                                <i class="fa-solid fa-music"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Music Theory & Ear Training</h4>
+                                <span class="text-xs text-slate-400">ทฤษฎีดนตรีและการฟัง</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold text-slate-300">Intermediate</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        ความรู้พื้นฐานตารางคอร์ด โครงสร้างสเกล และแกะเพลงด้วยหู (Ear Training) รวมถึงการจัดคอร์ดรองรับไลน์ร้อง
+                    </p>
+                    <div class="w-full bg-white/10 rounded-full h-2">
+                        <div class="bg-chula-500 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 4: Music Production / DAW -->
+                <div class="glass p-6 rounded-3xl border border-chula-500/20">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-white/10 text-chula-400 flex items-center justify-center">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-white">Music Production & DAW</h4>
+                                <span class="text-xs text-slate-400">Logic Pro / GarageBand / BandLab</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold text-slate-300">Practicing</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                        ทักษะการบันทึกเสียงกีตาร์และเสียงร้องผ่าน Audio Interface จัดการมิกซ์เสียงเบื้องต้นสำหรับทำ Demo และทำคลิป Cover
+                    </p>
+                    <div class="w-full bg-white/10 rounded-full h-2">
+                        <div class="bg-chula-500 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
     </section>
 
-    <!-- Section: Activities & Certificates (ผลงานและกิจกรรมเด่น) -->
-    <section id="activities" class="py-20">
+    <!-- Section: Activities & Performances (ผลงานการแสดง) -->
+    <section id="activities" class="py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-500 mb-2">ACTIVITIES & AWARDS</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">ผลงานและกิจกรรมที่ภาคภูมิใจ</h3>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-400 mb-2">PERFORMANCES</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">ผลงานและกิจกรรมดนตรีเด่น</h3>
                 <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Filter Buttons -->
+            <!-- Category Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-2 mb-12 no-print">
                 <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-chula-500 text-white shadow-md">
                     ทั้งหมด
                 </button>
-                <button onclick="filterProjects('academic')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-slate-100 text-slate-600 hover:bg-chula-50 hover:text-chula-600">
-                    ด้านวิชาการ & การแข่งขัน
+                <button onclick="filterProjects('live')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-white/5 text-slate-300 hover:bg-chula-500/20 hover:text-white">
+                    การแสดงสด (Live Show)
                 </button>
-                <button onclick="filterProjects('leadership')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-slate-100 text-slate-600 hover:bg-chula-50 hover:text-chula-600">
-                    ความเป็นผู้นำ & จิตอาสา
+                <button onclick="filterProjects('cover')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-white/5 text-slate-300 hover:bg-chula-500/20 hover:text-white">
+                    คลิปอัดเสียง / Cover
                 </button>
-                <button onclick="filterProjects('cert')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-slate-100 text-slate-600 hover:bg-chula-50 hover:text-chula-600">
-                    เกียรติบัตร & วุฒิบัตร
+                <button onclick="filterProjects('school')" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all bg-white/5 text-slate-300 hover:bg-chula-500/20 hover:text-white">
+                    กิจกรรมโรงเรียน
                 </button>
             </div>
 
             <!-- Projects Grid -->
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
                 
-                <!-- Project 1 -->
-                <div class="project-card academic glass rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" alt="แข่งคอมพิวเตอร์" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-chula-500 text-white text-xs px-2.5 py-1 rounded-lg font-medium shadow-md">
-                            วิชาการ
+                <!-- Card 1 -->
+                <div class="project-card live glass rounded-3xl overflow-hidden border border-white/10 hover:border-chula-500/40 transition-all duration-300 group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&q=80&w=600" alt="เล่นกีตาร์การแสดงสด" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-chula-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-md">
+                            Live Show
                         </span>
                     </div>
                     <div class="p-5">
-                        <span class="text-xs text-chula-600 font-semibold">รางวัลชนะเลิศอันดับ 1</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1 mb-2">การแข่งขันพัฒนาซอฟต์แวร์ระดับประเทศ</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                            สร้างสรรค์แอปพลิเคชันช่วยจัดการขยะในชุมชน พัฒนาด้วยวิทยาการข้อมูลและการเขียนโปรแกรมเชิงวัตถุ
+                        <span class="text-xs text-gold-400 font-medium">มินิคอนเสิร์ต / กิจกรรมดนตรี</span>
+                        <h4 class="text-lg font-bold text-white mt-1 mb-2">Guitar Solo & Vocal Performance</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            ขึ้นแสดงการเล่นกีตาร์โปร่งพร้อมร้องนำในงานกิจกรรมโรงเรียน สร้างความประทับใจแก่ผู้ฟังด้วยน้ำเสียงและไลน์กีตาร์ไพเราะ
                         </p>
-                        <div class="text-xs text-slate-400 flex items-center gap-1">
-                            <i class="fa-regular fa-calendar"></i> สิงหาคม 2567
+                        <div class="text-xs text-slate-400 flex items-center justify-between pt-3 border-t border-white/5">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> 2024</span>
+                            <span class="text-chula-400"><i class="fa-solid fa-music mr-1"></i> Main Guitarist</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card leadership glass rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=600" alt="ประธานนักเรียน" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-slate-800 text-white text-xs px-2.5 py-1 rounded-lg font-medium shadow-md">
-                            ผู้นำ / กิจกรรม
+                <!-- Card 2 -->
+                <div class="project-card cover glass rounded-3xl overflow-hidden border border-white/10 hover:border-chula-500/40 transition-all duration-300 group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&q=80&w=600" alt="Acoustic Cover Session" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-gold-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-md">
+                            Acoustic Cover
                         </span>
                     </div>
                     <div class="p-5">
-                        <span class="text-xs text-chula-600 font-semibold">ประธานสภานักเรียน</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1 mb-2">ผู้นำกิจกรรมค่ายวิชาการและจิตอาสา</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                            บริหารจัดการทีมงานกว่า 50 คน ในการจัดกิจกรรมพัฒนาทักษะวิชาการแก่น้องๆ โรงเรียนชุมชน
+                        <span class="text-xs text-chula-300 font-medium">บันทึกวิดีโอ Cover</span>
+                        <h4 class="text-lg font-bold text-white mt-1 mb-2">Acoustic Guitar Cover Track</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            อัดคลิปวิดีโอแสดงทักษะ Fingerstyle และร้องเพลงคัฟเวอร์ลงโซเชียลมีเดีย ได้รับผลตอบรับที่ดีเยี่ยม
                         </p>
-                        <div class="text-xs text-slate-400 flex items-center gap-1">
-                            <i class="fa-regular fa-calendar"></i> พฤศจิกายน 2567
+                        <div class="text-xs text-slate-400 flex items-center justify-between pt-3 border-t border-white/5">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> 2024</span>
+                            <span class="text-chula-400"><i class="fa-solid fa-microphone mr-1"></i> Vocal & Guitar</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card cert glass rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=600" alt="อบรมสอบวัดระดับ" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-lg font-medium shadow-md">
-                            เกียรติบัตร
+                <!-- Card 3 -->
+                <div class="project-card school glass rounded-3xl overflow-hidden border border-white/10 hover:border-chula-500/40 transition-all duration-300 group">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=600" alt="วงดนตรีโรงเรียน" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-purple-600 text-white text-xs px-3 py-1 rounded-full font-medium shadow-md">
+                            วงดนตรี
                         </span>
                     </div>
                     <div class="p-5">
-                        <span class="text-xs text-chula-600 font-semibold">ผ่านการทดสอบวัดระดับ</span>
-                        <h4 class="text-lg font-bold text-slate-800 mt-1 mb-2">CU-TEP / IELTS Academic Test</h4>
-                        <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                            ได้คะแนนทดสอบทักษะภาษาอังกฤษในระดับสูง พร้อมสำหรับการเรียนการสอนในระดับอุดมศึกษา
+                        <span class="text-xs text-gold-400 font-medium">สมาชิกวงดนตรีโรงเรียน</span>
+                        <h4 class="text-lg font-bold text-white mt-1 mb-2">School Band Music Festival</h4>
+                        <p class="text-xs text-slate-300 leading-relaxed mb-4">
+                            ร่วมซ้อมและขึ้นแสดงในฐานะมือกีตาร์ของวงดนตรีประจำโรงเรียน ฝึกฝนทักษะการทำงานร่วมกับผู้อื่นและการรับฟังจังหวะวง
                         </p>
-                        <div class="text-xs text-slate-400 flex items-center gap-1">
-                            <i class="fa-regular fa-calendar"></i> มกราคม 2568
+                        <div class="text-xs text-slate-400 flex items-center justify-between pt-3 border-t border-white/5">
+                            <span><i class="fa-regular fa-calendar mr-1"></i> 2024</span>
+                            <span class="text-chula-400"><i class="fa-solid fa-users-viewfinder mr-1"></i> Band Member</span>
                         </div>
                     </div>
                 </div>
@@ -462,85 +538,78 @@
         </div>
     </section>
 
-    <!-- Section: Skills & Abilities (ทักษะและความเชี่ยวชาญ) -->
-    <section id="skills" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Section: Target Faculty (เป้าหมายจุฬาลงกรณ์มหาวิทยาลัย) -->
+    <section id="target" class="py-20 bg-gradient-to-b from-chula-dark to-black relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-400 mb-2">SKILLS & CAPABILITIES</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">ทักษะและความสามารถ</h3>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-400 mb-2">TARGET FACULTY</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">เป้าหมายจุฬาลงกรณ์มหาวิทยาลัย</h3>
                 <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Hard Skills -->
-                <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-                    <h4 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                        <i class="fa-solid fa-laptop-code text-chula-400"></i> ทักษะทางวิชาการ & เทคโนโลยี
-                    </h4>
-
-                    <div class="space-y-5">
-                        <div>
-                            <div class="flex justify-between text-sm mb-1 font-medium">
-                                <span>Mathematics & Logic</span>
-                                <span class="text-chula-400">90%</span>
-                            </div>
-                            <div class="w-full bg-white/10 rounded-full h-2">
-                                <div class="gradient-bg h-2 rounded-full" style="width: 90%"></div>
-                            </div>
+            <!-- Target Faculty Showcase Box -->
+            <div class="glass rounded-3xl p-8 sm:p-12 border border-chula-500/30 shadow-2xl relative overflow-hidden">
+                <div class="grid md:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="md:col-span-8">
+                        <span class="inline-block px-3 py-1 bg-chula-500/20 text-chula-300 rounded-full text-xs font-medium mb-4 border border-chula-500/30">
+                            อันดับที่ 1 ในใจ (Dream Faculty)
+                        </span>
+                        <h4 class="text-3xl sm:text-4xl font-extrabold text-white mb-2">
+                            จุฬาลงกรณ์มหาวิทยาลัย
+                        </h4>
+                        <p class="text-gold-400 text-lg font-medium mb-6">
+                            คณะศิลปกรรมศาสตร์ / สาขาวิชาดุริยางคศิลป์ (Music Department)
+                        </p>
+                        
+                        <div class="space-y-4 text-slate-300 text-sm leading-relaxed mb-8">
+                            <p>
+                                <i class="fa-solid fa-quote-left text-chula-400 mr-2"></i>
+                                ความมุ่งมั่นของผมคือการได้รับการคัดเลือกเข้าศึกษาในสาขาดุริยางคศิลป์ จุฬาฯ ซึ่งเป็นสถาบันที่มีอาจารย์ผู้ทรงคุณวุฒิด้านดนตรีระดับประเทศ ผมเชื่อมั่นว่าบรรยากาศและหลักสูตรที่เข้มข้นจะช่วยพัฒนาทักษะการเล่นกีตาร์ การขับร้อง และทฤษฎีดนตรีของผมให้ก้าวสู่ระดับมืออาชีพ
+                            </p>
                         </div>
 
-                        <div>
-                            <div class="flex justify-between text-sm mb-1 font-medium">
-                                <span>Programming (Python / C++ / Web)</span>
-                                <span class="text-chula-400">85%</span>
-                            </div>
-                            <div class="w-full bg-white/10 rounded-full h-2">
-                                <div class="gradient-bg h-2 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between text-sm mb-1 font-medium">
-                                <span>English Communication (CU-TEP / IELTS)</span>
-                                <span class="text-chula-400">80%</span>
-                            </div>
-                            <div class="w-full bg-white/10 rounded-full h-2">
-                                <div class="gradient-bg h-2 rounded-full" style="width: 80%"></div>
-                            </div>
+                        <!-- Objectives Pills -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3.5 py-1.5 rounded-xl bg-white/5 text-xs text-slate-200 border border-white/10">
+                                <i class="fa-solid fa-guitar text-chula-400 mr-1.5"></i> Professional Guitarist
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-white/5 text-xs text-slate-200 border border-white/10">
+                                <i class="fa-solid fa-microphone text-chula-400 mr-1.5"></i> Vocal Artist
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-white/5 text-xs text-slate-200 border border-white/10">
+                                <i class="fa-solid fa-pen-nib text-chula-400 mr-1.5"></i> Songwriter & Composer
+                            </span>
                         </div>
                     </div>
-                </div>
 
-                <!-- Soft Skills -->
-                <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-                    <h4 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-                        <i class="fa-solid fa-users text-chula-400"></i> ทักษะทางสังคม & การทำงาน
-                    </h4>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
-                            <i class="fa-solid fa-comments text-2xl text-chula-400 mb-2"></i>
-                            <h5 class="text-sm font-bold text-white">การสื่อสารอย่างมีประสิทธิภาพ</h5>
-                            <p class="text-xs text-slate-400 mt-1">การนำเสนอและถ่ายทอดความคิด</p>
+                    <!-- Side Status Card -->
+                    <div class="md:col-span-4 bg-white/5 p-6 rounded-2xl border border-white/10 text-center">
+                        <div class="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center mx-auto mb-4 text-2xl text-white shadow-lg shadow-chula-500/30">
+                            <i class="fa-solid fa-award"></i>
                         </div>
+                        <h5 class="text-white font-bold text-lg mb-1">สถานะผู้สมัคร</h5>
+                        <p class="text-xs text-chula-300 mb-6">TCAS Portfolio Round</p>
 
-                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
-                            <i class="fa-solid fa-handshake text-2xl text-chula-400 mb-2"></i>
-                            <h5 class="text-sm font-bold text-white">การทำงานร่วมกัน</h5>
-                            <p class="text-xs text-slate-400 mt-1">รับฟังและปรับตัวเข้ากับทีม</p>
-                        </div>
-
-                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
-                            <i class="fa-solid fa-lightbulb text-2xl text-chula-400 mb-2"></i>
-                            <h5 class="text-sm font-bold text-white">การแก้ไขปัญหาเชิงสร้างสรรค์</h5>
-                            <p class="text-xs text-slate-400 mt-1">วิเคราะห์ปัญหาและคิดนอกกรอบ</p>
-                        </div>
-
-                        <div class="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
-                            <i class="fa-solid fa-clock text-2xl text-chula-400 mb-2"></i>
-                            <h5 class="text-sm font-bold text-white">การบริหารเวลา</h5>
-                            <p class="text-xs text-slate-400 mt-1">จัดลำดับความสำคัญของงาน</p>
+                        <div class="space-y-3 text-left text-xs">
+                            <div>
+                                <div class="flex justify-between text-slate-300 mb-1">
+                                    <span>ความหลงใหลในดนตรี</span>
+                                    <span class="text-gold-400 font-bold">100%</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1.5">
+                                    <div class="gradient-gold h-1.5 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-slate-300 mb-1">
+                                    <span>ทักษะกีตาร์และร้องเพลง</span>
+                                    <span class="text-chula-300 font-bold">พร้อมสำหรับการ Audition</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1.5">
+                                    <div class="gradient-bg h-1.5 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -550,73 +619,73 @@
     </section>
 
     <!-- Section: Contact (การติดต่อ) -->
-    <section id="contact" class="py-20">
+    <section id="contact" class="py-20 relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-500 mb-2">GET IN TOUCH</h2>
-                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">ช่องทางการติดต่อ</h3>
+                <h2 class="text-xs font-bold uppercase tracking-widest text-chula-400 mb-2">CONTACT</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">ช่องทางการติดต่อ</h3>
                 <div class="w-16 h-1 gradient-bg mx-auto mt-4 rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-12 gap-8">
                 <!-- Info Left -->
                 <div class="md:col-span-5 space-y-4">
-                    <div class="glass p-6 rounded-2xl border border-slate-100 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-chula-100 text-chula-600 flex items-center justify-center text-xl shrink-0">
+                    <div class="glass p-5 rounded-2xl border border-white/10 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-chula-900/80 text-chula-400 flex items-center justify-center text-xl shrink-0">
                             <i class="fa-solid fa-envelope"></i>
                         </div>
                         <div>
-                            <span class="text-xs text-slate-400 block font-medium">อีเมล (Email)</span>
-                            <span id="display-email" class="text-sm font-bold text-slate-800">kittiphap.cu@gmail.com</span>
+                            <span class="text-xs text-slate-400 block">อีเมลติดต่อ</span>
+                            <span class="text-sm font-bold text-white">wongwat.hengheng@gmail.com</span>
                         </div>
                     </div>
 
-                    <div class="glass p-6 rounded-2xl border border-slate-100 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-chula-100 text-chula-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-solid fa-phone"></i>
+                    <div class="glass p-5 rounded-2xl border border-white/10 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-chula-900/80 text-chula-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-brands fa-instagram"></i>
                         </div>
                         <div>
-                            <span class="text-xs text-slate-400 block font-medium">เบอร์โทรศัพท์</span>
-                            <span id="display-phone" class="text-sm font-bold text-slate-800">089-123-4567</span>
+                            <span class="text-xs text-slate-400 block">Instagram</span>
+                            <span class="text-sm font-bold text-white">@hengheng_music</span>
                         </div>
                     </div>
 
-                    <div class="glass p-6 rounded-2xl border border-slate-100 flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-chula-100 text-chula-600 flex items-center justify-center text-xl shrink-0">
-                            <i class="fa-brands fa-line"></i>
+                    <div class="glass p-5 rounded-2xl border border-white/10 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-chula-900/80 text-chula-400 flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-brands fa-youtube"></i>
                         </div>
                         <div>
-                            <span class="text-xs text-slate-400 block font-medium">Line ID</span>
-                            <span id="display-line" class="text-sm font-bold text-slate-800">@kittiphap_cu</span>
+                            <span class="text-xs text-slate-400 block">YouTube Channel</span>
+                            <span class="text-sm font-bold text-white">HengHeng Guitar & Vocal</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Simple Contact Form / Quick Message -->
-                <div class="md:col-span-7 glass p-8 rounded-3xl border border-slate-100 shadow-sm">
-                    <h4 class="text-xl font-bold text-slate-800 mb-6">ส่งข้อความถึงผู้สมัคร</h4>
+                <!-- Form -->
+                <div class="md:col-span-7 glass p-8 rounded-3xl border border-white/10">
+                    <h4 class="text-xl font-bold text-white mb-6">ส่งข้อความติดต่อ / ฝากคำแนะนำ</h4>
                     <form onsubmit="handleFormSubmit(event)" class="space-y-4">
                         <div class="grid sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-600 mb-1">ชื่อผู้ติดต่อ</label>
-                                <input type="text" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500 text-sm">
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">ชื่อของคุณ</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:border-chula-500 text-white text-sm">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-600 mb-1">อีเมลกลับ</label>
-                                <input type="email" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500 text-sm">
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">อีเมลกลับ</label>
+                                <input type="email" required class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:border-chula-500 text-white text-sm">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-600 mb-1">ข้อความ</label>
-                            <textarea rows="4" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500 text-sm" placeholder="พิมพ์ข้อความที่ต้องการฝากไว้..."></textarea>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">ข้อความ</label>
+                            <textarea rows="4" required class="w-full px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 focus:outline-none focus:border-chula-500 text-white text-sm" placeholder="ฝากข้อความถึงเฮงเฮง..."></textarea>
                         </div>
                         <button type="submit" class="gradient-bg text-white px-6 py-3 rounded-xl font-medium shadow-md shadow-chula-500/20 hover:opacity-95 transition-all text-sm flex items-center justify-center gap-2 w-full sm:w-auto">
                             <i class="fa-solid fa-paper-plane"></i> ส่งข้อความ
                         </button>
                     </form>
-                    <div id="form-message" class="hidden mt-4 p-3 bg-emerald-50 text-emerald-700 rounded-xl text-xs text-center border border-emerald-200">
-                        ส่งข้อความเรียบร้อยแล้ว! ผู้สมัครจะติดต่อกลับอย่างเร็วที่สุด
+                    <div id="form-message" class="hidden mt-4 p-3 bg-emerald-950/80 text-emerald-300 rounded-xl text-xs text-center border border-emerald-500/30">
+                        ขอบคุณสำหรับข้อความ! เฮงเฮงจะติดต่อกลับอย่างรวดเร็วที่สุด
                     </div>
                 </div>
             </div>
@@ -625,151 +694,72 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 text-white py-12 border-t border-chula-900/50 no-print">
+    <footer class="bg-black text-white py-12 border-t border-white/10 no-print">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center text-white font-bold text-xl mx-auto mb-4 shadow-lg shadow-chula-500/20">
-                CU
+            <div class="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
+                <i class="fa-solid fa-music"></i>
             </div>
-            <p class="text-sm text-slate-400 max-w-md mx-auto mb-6">
-                เว็บไซต์แฟ้มสะสมผลงานอิเล็กทรอนิกส์ (E-Portfolio) สำหรับยื่นสมัครเข้าศึกษาต่อ จุฬาลงกรณ์มหาวิทยาลัย
+            <p class="text-sm text-slate-400 max-w-md mx-auto mb-4">
+                เว็บไซต์แฟ้มสะสมผลงานดนตรีอิเล็กทรอนิกส์ (E-Portfolio) ของ วงศ์วรรธน์ เรืองสุกใส (เฮงเฮง) ยื่นศึกษาต่อจุฬาลงกรณ์มหาวิทยาลัย
             </p>
-            <div class="text-xs text-slate-600 border-t border-slate-900 pt-6">
-                © 2026 Chulalongkorn University Admission Portfolio. All rights reserved.
+            <div class="text-xs text-slate-600 border-t border-white/5 pt-6">
+                © 2026 Wongwat Ruangsuksai. Chulalongkorn University Portfolio Applicant.
             </div>
         </div>
     </footer>
 
-    <!-- Customization Modal (no-print) -->
-    <div id="edit-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 no-print">
-        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl max-h-[90vh] overflow-y-auto">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="text-lg font-bold text-slate-800">ปรับแต่งข้อมูลส่วนตัว</h3>
-                <button onclick="closeEditModal()" class="text-slate-400 hover:text-slate-600 text-lg">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <form onsubmit="saveProfileChanges(event)" class="space-y-4 text-xs">
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">ชื่อ - นามสกุล</label>
-                    <input type="text" id="input-name" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">โรงเรียน</label>
-                    <input type="text" id="input-school" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block font-semibold text-slate-700 mb-1">เกรดเฉลี่ย (GPAX)</label>
-                        <input type="text" id="input-gpax" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-slate-700 mb-1">แผนการเรียน</label>
-                        <input type="text" id="input-program" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">คณะเป้าหมาย</label>
-                    <input type="text" id="input-faculty" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">สาขาวิชา</label>
-                    <input type="text" id="input-dept" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                </div>
-
-                <div>
-                    <label class="block font-semibold text-slate-700 mb-1">เหตุผลที่เลือกคณะนี้</label>
-                    <textarea id="input-reason" rows="3" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500"></textarea>
-                </div>
-
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block font-semibold text-slate-700 mb-1">อีเมล</label>
-                        <input type="email" id="input-email" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                    </div>
-                    <div>
-                        <label class="block font-semibold text-slate-700 mb-1">เบอร์โทรศัพท์</label>
-                        <input type="text" id="input-phone" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:outline-none focus:border-chula-500">
-                    </div>
-                </div>
-
-                <div class="pt-4 flex gap-2">
-                    <button type="submit" class="w-full gradient-bg text-white py-2.5 rounded-xl font-medium shadow-md hover:opacity-95 text-xs">
-                        บันทึกข้อมูล
-                    </button>
-                    <button type="button" onclick="closeEditModal()" class="w-full bg-slate-100 text-slate-600 py-2.5 rounded-xl font-medium hover:bg-slate-200 text-xs">
-                        ยกเลิก
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- JavaScript Interactions -->
+    <!-- Audio & Logic Scripts -->
     <script>
-        // Modal functions
-        function openEditModal() {
-            document.getElementById('input-name').value = document.getElementById('display-name').innerText;
-            document.getElementById('input-school').value = document.getElementById('display-school').innerText;
-            document.getElementById('input-gpax').value = document.getElementById('display-gpax').innerText;
-            document.getElementById('input-program').value = document.getElementById('display-program').innerText;
-            document.getElementById('input-faculty').value = document.getElementById('display-faculty-title').innerText;
-            document.getElementById('input-dept').value = document.getElementById('display-dept-title').innerText;
-            document.getElementById('input-reason').value = document.getElementById('display-target-reason').innerText.replace(/^[\s"“’‘'\n\r\t]+/, '');
-            document.getElementById('input-email').value = document.getElementById('display-email').innerText;
-            document.getElementById('input-phone').value = document.getElementById('display-phone').innerText;
+        // Simple Audio Player Simulation
+        let isPlaying = false;
+        let progressInterval;
 
-            document.getElementById('edit-modal').classList.remove('hidden');
+        function toggleAudio() {
+            const icon = document.getElementById('play-icon');
+            const progress = document.getElementById('audio-progress');
+
+            if (!isPlaying) {
+                isPlaying = true;
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+
+                // Simulate audio progress playing
+                let width = parseFloat(progress.style.width) || 0;
+                progressInterval = setInterval(() => {
+                    if (width >= 100) {
+                        width = 0;
+                        toggleAudio(); // Stop
+                    } else {
+                        width += 0.5;
+                        progress.style.width = width + '%';
+                    }
+                }, 100);
+            } else {
+                isPlaying = false;
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                clearInterval(progressInterval);
+            }
         }
 
-        function closeEditModal() {
-            document.getElementById('edit-modal').classList.add('hidden');
+        function seekAudio(event) {
+            const progressBar = event.currentTarget;
+            const clickPosition = event.clientX - progressBar.getBoundingClientRect().left;
+            const percentage = (clickPosition / progressBar.clientWidth) * 100;
+            document.getElementById('audio-progress').style.width = percentage + '%';
         }
 
-        function saveProfileChanges(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('input-name').value;
-            const school = document.getElementById('input-school').value;
-            const gpax = document.getElementById('input-gpax').value;
-            const program = document.getElementById('input-program').value;
-            const faculty = document.getElementById('input-faculty').value;
-            const dept = document.getElementById('input-dept').value;
-            const reason = document.getElementById('input-reason').value;
-            const email = document.getElementById('input-email').value;
-            const phone = document.getElementById('input-phone').value;
-
-            // Update UI elements
-            document.getElementById('display-name').innerText = name;
-            document.getElementById('info-fullname').innerText = name;
-            document.getElementById('display-school').innerText = school;
-            document.getElementById('info-school-high').innerText = school;
-            document.getElementById('display-gpax').innerText = gpax;
-            document.getElementById('display-program').innerText = program;
-            document.getElementById('display-faculty-title').innerText = faculty;
-            document.getElementById('display-dept-title').innerText = dept;
-            document.getElementById('display-target-reason').innerText = reason;
-            document.getElementById('display-email').innerText = email;
-            document.getElementById('display-phone').innerText = phone;
-
-            closeEditModal();
-        }
-
-        // Project filtering
+        // Project filtering logic
         function filterProjects(category) {
             const cards = document.querySelectorAll('.project-card');
             const btns = document.querySelectorAll('.filter-btn');
 
             btns.forEach(btn => {
                 btn.classList.remove('bg-chula-500', 'text-white', 'shadow-md');
-                btn.classList.add('bg-slate-100', 'text-slate-600');
+                btn.classList.add('bg-white/5', 'text-slate-300');
             });
 
-            event.target.classList.remove('bg-slate-100', 'text-slate-600');
+            event.target.classList.remove('bg-white/5', 'text-slate-300');
             event.target.classList.add('bg-chula-500', 'text-white', 'shadow-md');
 
             cards.forEach(card => {
@@ -781,23 +771,7 @@
             });
         }
 
-        // Image upload trigger
-        function triggerImageUpload() {
-            document.getElementById('image-input').click();
-        }
-
-        function previewImage(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById('profile-img').src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // Form Submission Simulation
+        // Contact Form Handlers
         function handleFormSubmit(e) {
             e.preventDefault();
             const msg = document.getElementById('form-message');
@@ -807,16 +781,6 @@
             }, 4000);
             e.target.reset();
         }
-
-        // Dynamic Header shadow on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                navbar.classList.add('py-1');
-            } else {
-                navbar.classList.remove('py-1');
-            }
-        });
     </script>
 </body>
 </html>
